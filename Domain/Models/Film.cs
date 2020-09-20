@@ -13,6 +13,7 @@ namespace movApp.Models
         public int Year { get; set; }
         public string Director { get; set; }
         public string PathImg { get; set; }
+        public string UserId { get; set; }
         public User User { get; set; }
 
     }

@@ -12,24 +12,14 @@ namespace movApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        MovieDbContext movieDbContext;
+       
         public HomeController(ILogger<HomeController> logger)
         {
-            movieDbContext = new MovieDbContext();
+          
             _logger = logger;
         }
 
         public IActionResult Index()
-        {
-            movieDbContext.Users.Add(new User { 
-            
-           
-            });
-            movieDbContext.SaveChanges();
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }
@@ -39,7 +29,6 @@ namespace movApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
 
     }
 }

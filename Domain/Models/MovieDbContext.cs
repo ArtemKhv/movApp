@@ -11,30 +11,21 @@ namespace movApp.Models
     {
         public DbSet<Film> Films { get; set; }
 
-
         public MovieDbContext(DbContextOptions<MovieDbContext> options)
             : base(options)
         {
         }
-        //public DbSet<User> Users { get; set; }
         public MovieDbContext()
         {
             Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=movie2;");
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=movApp;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<User>().HasData(
-            //    new User[]
-            //    {
-            //        new User {id=1Name="Барс", Password= null}
-            //    });;
-
-
         }
     }
 }
